@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "edge-control": {
+      "command": "node",
+      "args": ["mcp/server.js"],
+      "env": {
+        "EDGE_CONTROL_PORT": "8765",
+        "EDGE_CONTROL_MCP_COMPACT": "1"
+      }
+    }
+  }
+}

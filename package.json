@@ -1,0 +1,17 @@
+{
+  "name": "edge-control",
+  "private": true,
+  "version": "3.1.0",
+  "type": "module",
+  "description": "Local bridge + MV3 extension to let Claude Code control a real, already-logged-in Edge browser via WebSocket (no --remote-debugging-port).",
+  "scripts": {
+    "start": "node server/bridge.js",
+    "mcp": "node mcp/server.js",
+    "test": "node --test test/actions.validate.test.js test/dom.actions.test.js test/router.test.js test/bridge.integration.test.js test/mcp.tools.test.js test/snapshot.logic.test.js test/coverage.test.js test/mcp.handlers.test.js test/errors.test.js",
+    "check": "node --test test/actions.validate.test.js test/dom.actions.test.js test/router.test.js test/bridge.integration.test.js test/mcp.tools.test.js test/snapshot.logic.test.js test/coverage.test.js test/mcp.handlers.test.js test/errors.test.js && node --check cli.js && node --check server/bridge.js && node --check server/router.js && node --check mcp/server.js && node --check mcp/bridge-client.js && node --check mcp/handlers.js && node --check mcp/tools.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "ws": "^8.21.0"
+  }
+}
